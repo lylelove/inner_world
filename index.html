@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的碎碎念</title>
+    <style>
+        /* 新增渐变背景和纹理 */
+        :root {
+            --primary-color: #2c3e50;
+            --text-color: #34495e;
+            --background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --container-bg: rgba(255, 255, 255, 0.9);
+            --accent-color: #6c5ce7;
+        }
+
+        body {
+            /* 新增背景图案 */
+            background: var(--background-color), 
+                repeating-linear-gradient(45deg, transparent 0 20px, 
+                rgba(255,255,255,0.8) 20px 40px);
+            min-height: 100vh;
+            backdrop-filter: blur(10px);
+        }
+
+        /* 增强页头设计 */
+        .header {
+            position: relative;
+            padding: 4rem 0 3rem;
+            margin-bottom: 3rem;
+            display: flex; /* 新增弹性布局 */
+            flex-direction: column;
+            align-items: center; /* 垂直居中 */
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            /* 移除 display: inline-block */
+            text-align: center; /* 确保文字居中 */
+            width: 100%; /* 撑满容器宽度 */
+            max-width: 600px; /* 添加最大宽度限制 */
+        }
+
+        .header p {
+            color: #666;
+            margin-top: 1rem; /* 增加间距 */
+            font-size: 1.1rem;
+            text-align: center; /* 副标题也居中 */
+            width: 80%; /* 控制文本宽度 */
+        }
+        /* 新增悬停动画 */
+        .header h1:hover {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* 优化评论容器 */
+        .giscus-container {
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2.5rem;
+        }
+
+        .giscus-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        /* 新增装饰性背景元素 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50vmin;
+            left: -50vmin;
+            width: 100vmin;
+            height: 100vmin;
+            background: linear-gradient(45deg, var(--accent-color) 10%, transparent 30%);
+            opacity: 0.08;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                letter-spacing: 0.03em;
+            }
+            
+            .giscus-container {
+                padding: 1.8rem;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>沈知节</h1>
+        <p>我的的小规模世界</p>
+    </div>
+    <div class="giscus-container">
+        <script src="https://giscus.app/client.js"
+        data-repo="lylelove/lylelove.github.io"
+        data-repo-id="R_kgDOGl9NTw"
+        data-mapping="number"
+        data-term="12"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+        </script>
+    </div>
+</body>
+</html>
