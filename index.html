@@ -3,73 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的碎碎念</title>
+    <title>沈知节 - 我的内心世界</title>
+    <meta name="description" content="沈知节的个人博客 - 记录内心世界的碎碎念">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* 主题定义 */
+        /* 全局CSS变量定义 */
         :root {
-            /* 默认主题 */
+            /* 字体定义 */
+            --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+            
+            /* 默认主题色彩 */
             --primary-color: #2c3e50;
-            --text-color: #34495e;
-            --background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            --container-bg: rgba(255, 255, 255, 0.9);
-            --accent-color: #6c5ce7;
-            --header-text-color: #333;
-            --subheader-text-color: #666;
+            --text-color: #2c3e50;
+            --text-secondary: #5a6c7d;
+            --background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --container-bg: rgba(255, 255, 255, 0.95);
+            --accent-color: #667eea;
+            --header-text-color: #ffffff;
+            --subheader-text-color: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(255, 255, 255, 0.2);
+            --shadow-light: 0 8px 32px rgba(31, 38, 135, 0.15);
+            --shadow-medium: 0 15px 35px rgba(31, 38, 135, 0.2);
+            --backdrop-blur: 20px;
         }
 
         /* 深色主题 */
         [data-theme="dark"] {
-            --primary-color: #121212;
-            --text-color: #e0e0e0;
-            --background-color: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
-            --container-bg: rgba(30, 30, 30, 0.9);
-            --accent-color: #bb86fc;
-            --header-text-color: #ffffff;
-            --subheader-text-color: #cccccc;
+            --primary-color: #0d1117;
+            --text-color: #e6edf3;
+            --text-secondary: #7d8590;
+            --background-color: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+            --container-bg: rgba(33, 38, 45, 0.95);
+            --accent-color: #58a6ff;
+            --header-text-color: #f0f6fc;
+            --subheader-text-color: rgba(240, 246, 252, 0.8);
+            --border-color: rgba(240, 246, 252, 0.1);
+            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         /* 暖色主题 */
         [data-theme="warm"] {
-            --primary-color: #5d4037;
-            --text-color: #3e2723;
-            --background-color: linear-gradient(135deg, #ffebee 0%, #ffccbc 100%);
-            --container-bg: rgba(255, 248, 240, 0.9);
-            --accent-color: #ff7043;
-            --header-text-color: #4e342e;
-            --subheader-text-color: #6d4c41;
+            --primary-color: #8b4513;
+            --text-color: #5d2f0a;
+            --text-secondary: #8b6f47;
+            --background-color: linear-gradient(135deg, #fff8e1 0%, #ffcc80 50%, #ffab40 100%);
+            --container-bg: rgba(255, 248, 225, 0.95);
+            --accent-color: #ff8a65;
+            --header-text-color: #bf360c;
+            --subheader-text-color: rgba(191, 54, 12, 0.8);
+            --border-color: rgba(191, 54, 12, 0.2);
+            --shadow-light: 0 8px 32px rgba(255, 138, 101, 0.15);
+            --shadow-medium: 0 15px 35px rgba(255, 138, 101, 0.2);
         }
 
         /* 自然绿主题 */
         [data-theme="nature"] {
-            --primary-color: #2e7d32;
-            --text-color: #1b5e20;
-            --background-color: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            --container-bg: rgba(250, 255, 250, 0.9);
-            --accent-color: #43a047;
+            --primary-color: #1b5e20;
+            --text-color: #2e7d32;
+            --text-secondary: #558b2f;
+            --background-color: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 50%, #a5d6a7 100%);
+            --container-bg: rgba(232, 245, 232, 0.95);
+            --accent-color: #66bb6a;
             --header-text-color: #1b5e20;
-            --subheader-text-color: #388e3c;
+            --subheader-text-color: rgba(27, 94, 32, 0.8);
+            --border-color: rgba(27, 94, 32, 0.2);
+            --shadow-light: 0 8px 32px rgba(102, 187, 106, 0.15);
+            --shadow-medium: 0 15px 35px rgba(102, 187, 106, 0.2);
         }
 
         /* 海洋蓝主题 */
         [data-theme="ocean"] {
-            --primary-color: #0277bd;
-            --text-color: #01579b;
-            --background-color: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            --container-bg: rgba(245, 250, 255, 0.9);
-            --accent-color: #039be5;
-            --header-text-color: #01579b;
-            --subheader-text-color: #0288d1;
+            --primary-color: #0d47a1;
+            --text-color: #1565c0;
+            --text-secondary: #1976d2;
+            --background-color: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #42a5f5 100%);
+            --container-bg: rgba(227, 242, 253, 0.95);
+            --accent-color: #2196f3;
+            --header-text-color: #0d47a1;
+            --subheader-text-color: rgba(13, 71, 161, 0.8);
+            --border-color: rgba(13, 71, 161, 0.2);
+            --shadow-light: 0 8px 32px rgba(33, 150, 243, 0.15);
+            --shadow-medium: 0 15px 35px rgba(33, 150, 243, 0.2);
+        }
+
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            /* 新增背景图案 */
-            background: var(--background-color), 
-                repeating-linear-gradient(45deg, transparent 0 20px, 
-                rgba(255,255,255,0.8) 20px 40px);
+            font-family: var(--font-family);
+            font-weight: 400;
+            line-height: 1.6;
+            background: var(--background-color);
+            background-attachment: fixed;
             min-height: 100vh;
-            backdrop-filter: blur(10px);
             color: var(--text-color);
-            transition: all 0.5s ease;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 美化滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        /* 主容器 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* 增强页头设计 */
@@ -128,18 +198,64 @@
 
         /* 优化评论容器 */
         .giscus-container {
-            border: 1px solid rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
-            padding: 2.5rem;
-            background-color: var(--container-bg);
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
+            background: var(--container-bg);
+            backdrop-filter: blur(var(--backdrop-blur));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .giscus-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.6;
         }
 
         .giscus-container:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
+        }
+
+        /* 新增内容区域 */
+        .content-section {
+            background: var(--container-bg);
+            backdrop-filter: blur(var(--backdrop-blur));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.6;
+        }
+
+        .content-section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
         }
 
         /* 新增装饰性背景元素 */
@@ -248,24 +364,27 @@
         </div>
     </div>
 
-    <div class="header">
-        <h1>沈知节</h1>
-        <p>我的的小规模世界</p>
-    </div>
-    <div class="giscus-container">
-        <script src="https://giscus.app/client.js"
-        data-repo="lylelove/lylelove.github.io"
-        data-repo-id="R_kgDOGl9NTw"
-        data-mapping="number"
-        data-term="12"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-        </script>
+    <div class="main-container">
+        <header class="header">
+            <h1>沈知节</h1>
+            <p>我的内心世界</p>
+        </header>
+
+        <main class="content-section giscus-container">
+            <script src="https://giscus.app/client.js"
+            data-repo="lylelove/lylelove.github.io"
+            data-repo-id="R_kgDOGl9NTw"
+            data-mapping="number"
+            data-term="12"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+            </script>
+        </main>
     </div>
 
     <!-- 主题切换脚本 -->
