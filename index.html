@@ -5,44 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沈知节 - 我的内心世界</title>
     <meta name="description" content="沈知节的个人博客 - 记录内心世界的碎碎念">
+    <meta name="giscus:backlink" content="https://github.com/lylelove/lylelove.github.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- 配置区域 -->
-    <script>
-        // === 配置信息 ===
-        const SITE_CONFIG = {
-            // 个人信息
-            name: '沈知节',
-            subtitle: '我的内心世界',
-            avatar: 'https://via.placeholder.com/60x60/07c160/ffffff?text=沈',
-            coverImage: 'https://via.placeholder.com/600x200/4b9e6f/ffffff?text=Cover',
-            
-            // Giscus 评论系统配置
-            giscus: {
-                repo: 'lylelove/lylelove.github.io',
-                repoId: 'R_kgDOGl9NTw',
-                mapping: 'number',
-                term: '12',
-                reactionsEnabled: '1',
-                emitMetadata: '0',
-                inputPosition: 'top',
-                theme: 'light',
-                lang: 'zh-CN',
-                order: 'desc'
-            },
-            
-            // 主题配置
-            themes: {
-                default: { name: '默认主题', color: '#07c160' },
-                dark: { name: '深色主题', color: '#1a1a1a' },
-                warm: { name: '暖色主题', color: '#ff8a65' },
-                nature: { name: '自然主题', color: '#66bb6a' },
-                ocean: { name: '海洋主题', color: '#42a5f5' }
-            }
-        };
-    </script>
     
     <style>
         /* === 微信朋友圈样式 === */
@@ -62,66 +28,6 @@
             --wechat-divider: #ebebeb;
             --wechat-shadow: 0 1px 2px rgba(0,0,0,0.1);
             --wechat-radius: 4px;
-        }
-
-        /* 深色主题 */
-        [data-theme="dark"] {
-            --primary-color: #0d1117;
-            --text-color: #e6edf3;
-            --text-secondary: #7d8590;
-            --background-color: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
-            --container-bg: rgba(33, 38, 45, 0.95);
-            --accent-color: #58a6ff;
-            --header-text-color: #f0f6fc;
-            --subheader-text-color: rgba(240, 246, 252, 0.8);
-            --border-color: rgba(240, 246, 252, 0.1);
-            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        /* 暖色主题 */
-        [data-theme="warm"] {
-            --primary-color: #8b4513;
-            --text-color: #5d2f0a;
-            --text-secondary: #8b6f47;
-            --background-color: linear-gradient(135deg, #fff8e1 0%, #ffcc80 50%, #ffab40 100%);
-            --container-bg: rgba(255, 248, 225, 0.95);
-            --accent-color: #ff8a65;
-            --header-text-color: #bf360c;
-            --subheader-text-color: rgba(191, 54, 12, 0.8);
-            --border-color: rgba(191, 54, 12, 0.2);
-            --shadow-light: 0 8px 32px rgba(255, 138, 101, 0.15);
-            --shadow-medium: 0 15px 35px rgba(255, 138, 101, 0.2);
-        }
-
-        /* 自然绿主题 */
-        [data-theme="nature"] {
-            --primary-color: #1b5e20;
-            --text-color: #2e7d32;
-            --text-secondary: #558b2f;
-            --background-color: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 50%, #a5d6a7 100%);
-            --container-bg: rgba(232, 245, 232, 0.95);
-            --accent-color: #66bb6a;
-            --header-text-color: #1b5e20;
-            --subheader-text-color: rgba(27, 94, 32, 0.8);
-            --border-color: rgba(27, 94, 32, 0.2);
-            --shadow-light: 0 8px 32px rgba(102, 187, 106, 0.15);
-            --shadow-medium: 0 15px 35px rgba(102, 187, 106, 0.2);
-        }
-
-        /* 海洋蓝主题 */
-        [data-theme="ocean"] {
-            --primary-color: #0d47a1;
-            --text-color: #1565c0;
-            --text-secondary: #1976d2;
-            --background-color: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #42a5f5 100%);
-            --container-bg: rgba(227, 242, 253, 0.95);
-            --accent-color: #2196f3;
-            --header-text-color: #0d47a1;
-            --subheader-text-color: rgba(13, 71, 161, 0.8);
-            --border-color: rgba(13, 71, 161, 0.2);
-            --shadow-light: 0 8px 32px rgba(33, 150, 243, 0.15);
-            --shadow-medium: 0 15px 35px rgba(33, 150, 243, 0.2);
         }
 
         /* 重置默认样式 */
@@ -166,316 +72,330 @@
 
         /* 微信主容器 */
         .wechat-container {
-            max-width: 414px;
+            max-width: 500px;
             margin: 0 auto;
-            background: var(--wechat-content-bg);
+            background: var(--wechat-bg);
             min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
-        /* 增强页头设计 */
-        .header {
+        /* 朋友圈头部 */
+        .moments-header {
             position: relative;
-            padding: 4rem 0 3rem;
-            margin-bottom: 3rem;
-            display: flex; /* 新增弹性布局 */
-            flex-direction: column;
-            align-items: center; /* 垂直居中 */
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: var(--accent-color);
-            border-radius: 2px;
-            transition: background 0.5s ease;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 0.05em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            text-align: center; /* 确保文字居中 */
-            width: 100%; /* 撑满容器宽度 */
-            max-width: 600px; /* 添加最大宽度限制 */
-            color: var(--header-text-color);
-            transition: color 0.5s ease;
-        }
-
-        .header p {
-            color: var(--subheader-text-color);
-            margin-top: 1rem; /* 增加间距 */
-            font-size: 1.1rem;
-            text-align: center; /* 副标题也居中 */
-            width: 80%; /* 控制文本宽度 */
-            transition: color 0.5s ease;
-        }
-        
-        /* 新增悬停动画 */
-        .header h1:hover {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* 优化评论容器 */
-        .giscus-container {
-            background: var(--container-bg);
-            backdrop-filter: blur(var(--backdrop-blur));
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-light);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            height: 330px;
             overflow: hidden;
         }
 
-        .giscus-container::before {
-            content: '';
+        .cover-image {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+        }
+
+        .user-info {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-            opacity: 0.6;
-        }
-
-        .giscus-container:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--accent-color);
-        }
-
-        /* 新增内容区域 */
-        .content-section {
-            background: var(--container-bg);
-            backdrop-filter: blur(var(--backdrop-blur));
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-light);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-            opacity: 0.6;
-        }
-
-        .content-section:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--accent-color);
-        }
-
-        /* 新增装饰性背景元素 */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50vmin;
-            left: -50vmin;
-            width: 100vmin;
-            height: 100vmin;
-            background: linear-gradient(45deg, var(--accent-color) 10%, transparent 30%);
-            opacity: 0.08;
-            transform: rotate(45deg);
-            z-index: -1;
-            transition: background 0.5s ease;
-        }
-
-        /* 主题切换器样式 */
-        .theme-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--container-bg);
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: background-color 0.5s ease;
-        }
-
-        .theme-options {
+            bottom: 15px;
+            right: 15px;
             display: flex;
-            gap: 10px;
+            align-items: center;
         }
 
-        .theme-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        .user-name {
+            color: var(--wechat-text);
+            font-size: 18px;
+            font-weight: 500;
+            margin-right: 10px;
+            text-align: right;
         }
 
-        .theme-btn:hover {
-            transform: scale(1.1);
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+            border: 1px solid var(--wechat-border);
         }
 
-        .theme-btn.active {
-            border-color: var(--accent-color);
-            transform: scale(1.15);
+        /* 朋友圈内容区 */
+        .moments-content {
+            background: var(--wechat-bg);
+            padding-bottom: 20px;
         }
 
-        .theme-btn.default {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        /* Giscus评论区样式 */
+        .giscus-container {
+            background: var(--wechat-content-bg);
+            padding: 15px;
+            margin-top: 8px;
         }
 
-        .theme-btn.dark {
-            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+        /* 自定义Giscus样式 */
+        .giscus-frame {
+            width: 100%;
+            border: none;
         }
 
-        .theme-btn.warm {
-            background: linear-gradient(135deg, #ffebee 0%, #ffccbc 100%);
-        }
-
-        .theme-btn.nature {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-        }
-
-        .theme-btn.ocean {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-                letter-spacing: 0.03em;
+        /* 响应式调整 */
+        @media (max-width: 500px) {
+            .moments-header {
+                height: 280px;
             }
             
-            .giscus-container {
-                padding: 1.8rem;
-                margin: 1.5rem 0;
+            .cover-image {
+                height: 220px;
             }
+            
+            .avatar {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .user-name {
+                font-size: 16px;
+            }
+        }
 
-            .theme-switcher {
-                top: 10px;
-                right: 10px;
-            }
-
-            .theme-btn {
-                width: 25px;
-                height: 25px;
-            }
+        /* 自定义Giscus样式 - 通过CSS变量注入 */
+        :root {
+            --giscus-theme-color: var(--wechat-green);
+            --giscus-background-color: var(--wechat-content-bg);
+            --giscus-text-color: var(--wechat-text);
+            --giscus-secondary-text-color: var(--wechat-text-secondary);
+            --giscus-border-color: var(--wechat-border);
+            --giscus-accent-color: var(--wechat-blue);
         }
     </style>
 </head>
 <body>
-    <!-- 主题切换器 -->
-    <div class="theme-switcher">
-        <div class="theme-options">
-            <button class="theme-btn default active" data-theme="default" title="默认主题"></button>
-            <button class="theme-btn dark" data-theme="dark" title="深色主题"></button>
-            <button class="theme-btn warm" data-theme="warm" title="暖色主题"></button>
-            <button class="theme-btn nature" data-theme="nature" title="自然绿主题"></button>
-            <button class="theme-btn ocean" data-theme="ocean" title="海洋蓝主题"></button>
+    <div class="wechat-container">
+        <!-- 朋友圈头部 -->
+        <div class="moments-header">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="封面图" class="cover-image">
+            <div class="user-info">
+                <div class="user-name">沈知节</div>
+                <img src="https://avatars.githubusercontent.com/u/61548984" alt="头像" class="avatar">
+            </div>
+        </div>
+
+        <!-- 朋友圈内容区 - 只包含Giscus评论系统 -->
+        <div class="moments-content">
+            <div class="giscus-container">
+                <script src="https://giscus.app/client.js"
+                    data-repo="lylelove/lylelove.github.io"
+                    data-repo-id="R_kgDOGl9NTw"
+                    data-mapping="number"
+                    data-term="12"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="1"
+                    data-input-position="bottom"
+                    data-theme="light"
+                    data-lang="zh-CN"
+                    data-strict="1"
+                    crossorigin="anonymous"
+                    async>
+                </script>
+            </div>
         </div>
     </div>
 
-    <div class="main-container">
-        <header class="header">
-            <h1>沈知节</h1>
-            <p>我的内心世界</p>
-        </header>
-
-        <main class="content-section giscus-container">
-            <script src="https://giscus.app/client.js"
-            data-repo="lylelove/lylelove.github.io"
-            data-repo-id="R_kgDOGl9NTw"
-            data-mapping="number"
-            data-term="12"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="light"
-            data-lang="zh-CN"
-            data-order="desc"
-            crossorigin="anonymous"
-            async>
-            </script>
-        </main>
-    </div>
-
-    <!-- 主题切换脚本 -->
     <script>
+        // 根据ADVANCED-USAGE.md文档，添加自定义样式和功能
         document.addEventListener('DOMContentLoaded', function() {
-            // 获取所有主题按钮
-            const themeButtons = document.querySelectorAll('.theme-btn');
-            
-            // 从本地存储加载主题
-            const savedTheme = localStorage.getItem('selectedTheme');
-            if (savedTheme) {
-                setTheme(savedTheme);
+            // 创建自定义CSS样式 - 深度模仿微信朋友圈
+            const customStyle = document.createElement('style');
+            customStyle.textContent = `
+                /* 微信朋友圈风格的Giscus评论样式 */
+                .giscus {
+                    font-family: var(--font-primary) !important;
+                    background: transparent !important;
+                }
                 
-                // 更新按钮激活状态
-                themeButtons.forEach(btn => {
-                    if (btn.dataset.theme === savedTheme) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
+                /* 整体容器样式 */
+                .giscus .gsc-main {
+                    background: transparent !important;
+                }
+                
+                /* 评论框样式 - 朋友圈风格 */
+                .giscus .gsc-comment-box {
+                    background-color: var(--wechat-content-bg) !important;
+                    border: 1px solid var(--wechat-border) !important;
+                    border-radius: 4px !important;
+                    margin: 8px 0 !important;
+                    padding: 12px !important;
+                }
+                
+                /* 评论输入框样式 */
+                .giscus .gsc-comment-box textarea {
+                    border: 1px solid var(--wechat-border) !important;
+                    border-radius: 4px !important;
+                    font-size: 15px !important;
+                    font-family: var(--font-primary) !important;
+                    color: var(--wechat-text) !important;
+                    background: var(--wechat-content-bg) !important;
+                    padding: 8px 12px !important;
+                }
+                
+                /* 评论按钮样式 */
+                .giscus .gsc-comment-box-buttons button {
+                    background-color: var(--wechat-green) !important;
+                    border: none !important;
+                    border-radius: 4px !important;
+                    color: white !important;
+                    font-size: 14px !important;
+                    padding: 6px 16px !important;
+                }
+                
+                .giscus .gsc-comment-box-buttons button:hover {
+                    background-color: #06ad56 !important;
+                }
+                
+                /* 评论列表样式 - 朋友圈动态风格 */
+                .giscus .gsc-comment {
+                    background: var(--wechat-content-bg) !important;
+                    border: none !important;
+                    border-bottom: 8px solid var(--wechat-bg) !important;
+                    padding: 15px !important;
+                    margin: 0 !important;
+                    display: flex !important;
+                    align-items: flex-start !important;
+                }
+                
+                /* 评论者头像样式 - 朋友圈风格 */
+                .giscus .gsc-comment-author-avatar {
+                    margin-right: 10px !important;
+                    flex-shrink: 0 !important;
+                }
+                
+                .giscus .gsc-comment-author-avatar img {
+                    border-radius: 3px !important;
+                    width: 40px !important;
+                    height: 40px !important;
+                }
+                
+                /* 评论主体区域 */
+                .giscus .gsc-comment-body {
+                    flex: 1 !important;
+                }
+                
+                /* 评论者名称样式 - 朋友圈蓝色 */
+                .giscus .gsc-comment-author-name {
+                    color: var(--wechat-blue) !important;
+                    font-weight: 500 !important;
+                    font-size: 16px !important;
+                    margin-bottom: 6px !important;
+                    display: block !important;
+                }
+                
+                /* 评论内容样式 */
+                .giscus .gsc-comment-content {
+                    color: var(--wechat-text) !important;
+                    font-size: 15px !important;
+                    line-height: 1.5 !important;
+                    margin-bottom: 10px !important;
+                }
+                
+                /* 评论时间和操作区域 */
+                .giscus .gsc-comment-footer {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    color: var(--wechat-text-secondary) !important;
+                    font-size: 14px !important;
+                    margin-top: 8px !important;
+                }
+                
+                /* 回复按钮样式 */
+                .giscus .gsc-comment-footer button {
+                    color: var(--wechat-text-secondary) !important;
+                    background: none !important;
+                    border: none !important;
+                    font-size: 14px !important;
+                    padding: 0 !important;
+                }
+                
+                /* 点赞反应区域 - 朋友圈风格 */
+                .giscus .gsc-reactions {
+                    background: #f7f7f7 !important;
+                    border-radius: 3px !important;
+                    padding: 5px 10px !important;
+                    margin-top: 10px !important;
+                    font-size: 14px !important;
+                }
+                
+                .giscus .gsc-reactions button {
+                    background: none !important;
+                    border: none !important;
+                    color: var(--wechat-text-secondary) !important;
+                    font-size: 14px !important;
+                    margin-right: 8px !important;
+                }
+                
+                /* 嵌套回复样式 */
+                .giscus .gsc-reply {
+                    margin-left: 50px !important;
+                    border-left: 1px solid var(--wechat-divider) !important;
+                    padding-left: 15px !important;
+                    margin-top: 10px !important;
+                }
+                
+                /* 评论统计和排序 */
+                .giscus .gsc-comments-count, .giscus .gsc-comments-sort {
+                    color: var(--wechat-text-secondary) !important;
+                    font-size: 14px !important;
+                    background: var(--wechat-content-bg) !important;
+                    padding: 10px 15px !important;
+                    border-bottom: 1px solid var(--wechat-divider) !important;
+                }
+                
+                /* 加载更多按钮 */
+                .giscus .gsc-pagination button {
+                    background: var(--wechat-content-bg) !important;
+                    border: 1px solid var(--wechat-border) !important;
+                    color: var(--wechat-text) !important;
+                    border-radius: 4px !important;
+                    padding: 8px 16px !important;
+                    font-size: 14px !important;
+                }
+                
+                /* 移除默认边框和阴影 */
+                .giscus * {
+                    box-shadow: none !important;
+                }
+                
+                /* 确保整体背景透明 */
+                .giscus .gsc-timeline {
+                    background: transparent !important;
+                }
+            `;
+            document.head.appendChild(customStyle);
+
+            // 监听giscus框架加载完成
+            window.addEventListener('message', function(event) {
+                if (event.origin !== 'https://giscus.app') return;
+                if (!(typeof event.data === 'object' && event.data.giscus)) return;
+                
+                // 如果有错误消息，可以在控制台查看
+                if ('error' in event.data.giscus) {
+                    console.error('Giscus错误:', event.data.giscus.error);
+                }
+                
+                // 如果有讨论元数据，可以进行处理
+                if ('discussion' in event.data.giscus) {
+                    console.log('讨论加载成功');
+                    
+                    // 向giscus发送自定义主题配置
+                    const iframe = document.querySelector('iframe.giscus-frame');
+                    if (iframe) {
+                        const message = {
+                            setConfig: {
+                                theme: 'light',
+                                reactionsEnabled: true,
+                                emitMetadata: true,
+                                inputPosition: 'bottom'
+                            }
+                        };
+                        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
                     }
-                });
-            }
-            
-            // 为每个按钮添加点击事件
-            themeButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const theme = this.dataset.theme;
-                    
-                    // 保存主题选择
-                    localStorage.setItem('selectedTheme', theme);
-                    
-                    // 应用主题
-                    setTheme(theme);
-                    
-                    // 更新激活按钮
-                    themeButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                });
+                }
             });
-            
-            // 应用主题函数
-            function setTheme(theme) {
-                if (theme === 'default') {
-                    document.documentElement.removeAttribute('data-theme');
-                } else {
-                    document.documentElement.setAttribute('data-theme', theme);
-                }
-                
-                // 如果主题是深色，可能需要调整giscus主题
-                const giscusFrame = document.querySelector('.giscus-frame');
-                if (giscusFrame) {
-                    const message = {
-                        setConfig: {
-                            theme: theme === 'dark' ? 'dark' : 'light'
-                        }
-                    };
-                    giscusFrame.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-                }
-            }
         });
     </script>
 </body>
